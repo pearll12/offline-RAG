@@ -1,0 +1,29 @@
+# Python environments
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Vector Database (Do not commit the large ChromaDB binaries)
+data/vector_db/
+
+# Logs (Do not commit application logs)
+logs/*.log
+logs/*.log.*
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS Generated Files
+.DS_Store
+Thumbs.db
+
+# Optional Config Overrides
+.env
