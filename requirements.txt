@@ -1,0 +1,84 @@
+# ==============================================================================
+# Offline RAG Framework — Requirements
+# ==============================================================================
+# Python 3.11 is required.
+#
+# Install all dependencies with:
+#   pip install -r requirements.txt
+#
+# IMPORTANT: This project is designed to run FULLY OFFLINE after initial setup.
+# All packages below are installed once and never call external inference APIs.
+# ==============================================================================
+
+
+# ------------------------------------------------------------------------------
+# Core RAG Stack
+# ------------------------------------------------------------------------------
+
+# ChromaDB — persistent, local vector database for storing embeddings
+chromadb
+
+# Sentence Transformers — local embedding model (all-MiniLM-L6-v2)
+# Downloads the model once; all subsequent runs are fully offline
+sentence-transformers
+
+# Ollama — official Python client for local LLM inference via Ollama
+# Communicates with the locally running Ollama server (no cloud calls)
+ollama
+
+
+# ------------------------------------------------------------------------------
+# Streamlit — Web UI
+# ------------------------------------------------------------------------------
+
+# Streamlit — interactive web application framework
+streamlit
+
+# Watchdog — optional but recommended; speeds up Streamlit file watching
+watchdog
+
+
+# ------------------------------------------------------------------------------
+# Data Processing
+# ------------------------------------------------------------------------------
+
+# Pandas — tabular data loading, cleaning, and stratified sampling
+pandas
+
+# NumPy — numerical operations; required by sentence-transformers and chromadb
+numpy
+
+# scikit-learn — used for stratified sampling utilities
+scikit-learn
+
+
+# ------------------------------------------------------------------------------
+# Future Loader Support (optional but pre-included for extensibility)
+# ------------------------------------------------------------------------------
+
+# PyMuPDF — PDF text extraction (for future PDF domain support)
+# Renamed import: `import fitz`
+pymupdf==1.25.1
+
+# python-docx — DOCX text extraction (for future Word document support)
+python-docx==1.1.2
+
+# Markdown — Markdown to plain text conversion (for future .md support)
+markdown==3.7
+
+
+# ------------------------------------------------------------------------------
+# Utilities
+# ------------------------------------------------------------------------------
+
+# python-dotenv — load optional .env config overrides (good practice)
+python-dotenv==1.0.1
+
+# tqdm — progress bars for ingestion pipeline (batch embedding visibility)
+tqdm==4.67.1
+
+# colorlog — colored console logging for better developer experience
+colorlog==6.9.0
+
+# tabulate — used for formatted table output in logs and debug views
+tabulate==0.9.0
